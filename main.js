@@ -1,23 +1,27 @@
 const bookButtons = document.querySelectorAll(".btn1");
 
 bookButtons.forEach((button, index) => {
+    const booking_time_arr = [];
+    booking_time_arr.forEach((item)=>{
+        console.log(item)
+        item.disabled = true;
+        console.log(item)
+    })
     button.addEventListener("click", function (event) {
         event.preventDefault();
         const card = event.target.closest('.card');
         const radioInputs = card.querySelectorAll("input[type='radio']");
         const selectedInput = [...radioInputs].find(input => input.checked);
-
+        const booking_time_arr = [];
         if (selectedInput) {
             selectedInput.disabled = true;
             const k = selectedInput;
             const values = selectedInput.value;
             var name = card.querySelector('h3').innerHTML;
-            console.log(name)
-            const booking_time_arr = [];
-            booking_time_arr.forEach((item)=>{
-                item.disabled == false;
-                item.style.background = "red";
-            })
+            // console.log(name)
+            
+            console.log(booking_time_arr)
+            
             const bookingData = {
                 name: name,
                 time: values,
@@ -40,7 +44,6 @@ bookButtons.forEach((button, index) => {
                 document.body.removeChild(popup);
             }, 3000);
             
-            startTimer(values);
 
         } else {
             // Handle case when no radio input is selected
