@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/6f6ae48fb3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- navbar -->
+    <header>
+      <div class="logo">Campus link
+      </div>    
+      <nav>
+        <ul>
+          <li>
+            <a href="#home" class="active">Home</a>
+          </li>
+          <li>
+            <a href="#testimonials">Testimonials</a>
+          </li>
+          <li>
+            <a href="#contacts">Contact us</a>
+          </li>
+          <button class="connect-btn nav-btn" onclick="window.location.href='login.html'">Sign In</button>
+        </ul>
+      </nav>
+      <label for="nav_check" class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </label>
+    </header>
+    
+    <!-- hero section  -->
+    <div class="hero" id="home">
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="images/4.jpeg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="images/2.jpeg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="images/1.jpeg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- button -->
+    <div class="btn-container">
+      <button class="connect-btn" onclick="window.location.href='main.html'">Connect With Your Seniors</button>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials" id="testimonials">
+      <h1>Testimonials</h1>
+      <div class="wrapper">
+        <i id="left" class="fa-solid fa-chevron-left"></i>
+        <ul class="carousel">
+          <li class="card">
+            <div class="img">
+              <img src="images/anuj.jpeg" alt="img" draggable="false" />
+            </div>
+            <h2>ANUJ KUMAR SINGH</h2>
+            <span>Enjoy a plethora of sports facilities including cricket, football, basketball, tennis, badminton, and table tennis. Dive into our Olympic-size indoor swimming pool with daily classes led by experienced trainers.</span>
+          </li>
+          <li class="card">
+            <div class="img">
+              <img src="images/vivekananda.png" alt="img" draggable="false" />
+            </div>
+            <h2>P VIVEKANANDA</h2>
+            <span>Over four years, the program develops skills, culminating in capstone projects and specialized training for industry placements. Final year focuses on startups.</span>
+          </li>
+          <li class="card">
+            <div class="img">
+              <img src="images/mehak.png" alt="img" draggable="false" />
+            </div>
+            <h2>MEHAK JAIN</h2>
+            <span>Experience firsthand learning from a blend of top academics, scholars, and industry leaders hailing from Newton School of Technology and renowned global institutions and companies.</span>
+          </li>
+          <li class="card">
+            <div class="img">
+              <img src="images/ankush.jpeg" alt="img" draggable="false" />
+            </div>
+            <h2>ANKUSH</h2>
+            <span>Our vibrant campus in Sonipat spans 25 acres and is adorned with academic blocks, hostels for 1000+ students, and extensive sports facilities. It serves as a bustling hub for cultural and intellectual pursuits.</span>
+          </li>
+        </ul>
+        <i id="right" class="fa-solid fa-chevron-right"></i>
+      </div>
+    </div>
+
+    <!-- footer  -->
+    <div class="container" id="contacts">
+      <main class="row">
+        <section class="col left">
+          <div class="contactTitle">
+            <h2>Get In Touch</h2>
+            <p>
+              
+            </p>
+          </div>
+          <div class="contactInfo">
+            <div class="iconGroup">
+              <div class="icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="details">
+                <span>Phone</span>
+                <span>+00 110 111 00</span>
+              </div>
+            </div>
+
+            <div class="iconGroup">
+              <div class="icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="details">
+                <span>Email</span>
+                <span>name.tutorial@gmail.com</span>
+              </div>
+            </div>
+
+            <div class="iconGroup">
+              <div class="icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="details">
+                <span>Location</span>
+                <span>X Street, Y Road, San Fransisco</span>
+              </div>
+            </div>
+          </div>
+          <div class="socialMedia">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </section>
+
+        <section class="col right">
+          <div
+            class="visme_d"
+            data-title="Untitled Project"
+            data-url="90x8g336-untitled-project"
+            data-domain="forms"
+            data-full-page="false"
+            data-min-height="500px"
+            data-form-id="54173"
+          ></div>
+          <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
+        </section>
+      </main>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link rel="stylesheet" type="text/css" href="login.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="form-wrapper sign-in">
+        <form action="">
+          <h2>Login</h2>
+          <div class="input-group">
+            <input type="email" class="login-email" required />
+            <label for="username" id="username">Email</label>
+          </div>
+          <div class="input-group">
+            <input type="password" id="password-login" />
+            <label for="password" id="password">Password</label>
+          </div>
+          <button type="submit" class="login">Login</button>
+          <div class="signUp-link">
+            <p>
+              Don't have an account?
+              <a href="#" class="signUpBtn-link">Sign Up</a>
+            </p>
+          </div>
+        </form>
+      </div>
+      <div class="form-wrapper sign-up">
+        <form action="">
+          <h2>Sign Up</h2>
+          <div class="input-group">
+            <input type="text" required />
+            <label for="username" id="username">Username</label>
+          </div>
+          <div class="input-group">
+            <input type="email" id="email2" required />
+            <label for="email" id="email">Email</label>
+          </div>
+          <div class="input-group">
+            <input type="password" id="password3" required />
+            <label for="password" id="password2">Password</label>
+          </div>
+          <button type="submit" class="signup">Sign Up</button>
+          <div class="signUp-link">
+            <p>
+              Already have an account?
+              <a href="#" class="signInBtn-link">Sign In</a>
+            </p>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js"
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCffBHcP8kYaOXX2P8zmmBrIBJLrDzbVYs",
+        authDomain: "campuslink-e62b2.firebaseapp.com",
+        projectId: "campuslink-e62b2",
+        storageBucket: "campuslink-e62b2.appspot.com",
+        messagingSenderId: "560316097602",
+        appId: "1:560316097602:web:80d108931d37b061f139db"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      
+      const submit = document.querySelector(".signup");
+      submit.addEventListener("click", (event)=>{
+        event.preventDefault()
+        
+      const email = document.querySelector("#email2");
+      const password = document.getElementById("password3");
+
+      console.log(email.value)
+      console.log(password.value);
+
+      const auth = getAuth();
+      createUserWithEmailAndPassword(auth, email.value, password.value)
+        .then((userCredential) => {
+          // Signed up 
+          const user = userCredential.user;
+          console.log(user)
+          localStorage.setItem("user", JSON.stringify(user));
+          window.location.href='index.html';
+          // ...fe
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert(errorMessage);
+          // ..
+        });
+      })
+      const login = document.querySelector(".login");
+      
+      login.addEventListener("click",(event)=>{
+        event.preventDefault();
+
+      const loginEmail = document.querySelector(".login-email");
+      const loginPassword = document.querySelector("#password-login");
+      const auth = getAuth();
+      signInWithEmailAndPassword(auth, loginEmail.value, loginPassword.value)
+        .then((userCredential) => {
+          // Signed up 
+          const user = userCredential.user;
+          // alert("logging in")
+          localStorage.setItem("user", JSON.stringify(user));
+          window.location.href='index.html';
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert(errorMessage);
+          // ..
+        });
+      })
+    </script>
+    <script>
+      const signInBtnLink = document.querySelector(".signInBtn-link");
+      const signUpBtnLink = document.querySelector(".signUpBtn-link");
+      const wrapper = document.querySelector(".wrapper");
+      signUpBtnLink.addEventListener("click", () => {
+        wrapper.classList.toggle("active");
+      });
+      signInBtnLink.addEventListener("click", () => {
+        wrapper.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
